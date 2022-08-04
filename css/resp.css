@@ -1,0 +1,7 @@
+.hero .left div button:hover{
+    cursor: pointer;
+    background: #31bcdf;
+    color: #232323;
+    transition: 0.7s;
+    border-color: transparent;
+}
