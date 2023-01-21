@@ -113,7 +113,7 @@ header nav{
     box-shadow: 4px 3px 50px #34345233;
     padding: 10px;
     background: white;
-    clip-path: polygon(0 0, 100% 0, 100% 87%, 80% 100%, 0 87%);
+    /* clip-path: polygon(0 0, 100% 0, 100% 87%, 80% 100%, 0 87%); */
 	border-radius: 10px;
 }
 .timelinebox .heading h1{
@@ -304,9 +304,10 @@ ul {
 	.timeline-container li small,
 	.timeline-container li:nth-child(even) small {
 		top: 0;
-		left: 3%;
+		left: 6%;
 		margin: 0;
 		right: auto;
+		font-size: 14px;
 	}
 	
 	.timeline-container li {
@@ -322,7 +323,7 @@ ul {
 		top: 100%;
 		border: 3px solid #fff;
 		z-index: 2;
-		background-color: #00c4cc;
+		background-color: #9894cc;
 	}
 	
 }
