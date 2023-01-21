@@ -16,21 +16,22 @@ body{
     font-family: 'Poppins', sans-serif;
 
 }
-/* html{
+html{
 	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
 
-} */
+}
 /* this is for header icon and menu  */
 header{
     background: var(--darkbg);
     /* clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 90%, 0 100%); */
-	height: 100vh;
+
 	scroll-snap-align: start;
 	
     
 }
 header .container{
-    max-width: 1260px;
+    max-width: 1160px;
     padding: 0 15px;
     margin: 0 auto;
 	padding-top: 30px;
@@ -45,10 +46,10 @@ nav .right .menu a:hover{
     color: lightblue;
     transition: all .3s ease;
 }
-
+/* 
 header nav{
     padding: 2rem 0;
-}
+} */
 
 .branding img{
     width: 100px;
@@ -79,11 +80,13 @@ header nav{
     border: 2px solid #b0b0b0;
     color: #b0b0b0;
 }
-
+.hero .right{
+	justify-content: right;
+}
 /* page 2 */
 .about{
     background: var(--bluebg);
-	height: 100vh;
+
 	scroll-snap-align: start;
 }
 
@@ -91,9 +94,10 @@ header nav{
 
 
 .about .container{
-   
+    overflow: hidden;
     padding: 0 15px;
     margin: 0 auto;
+	align-items: center;
 }
 .about .container .left{
     margin: 40px;
@@ -185,7 +189,7 @@ ul {
 }
 
 .timeline-container li {
-	margin: 60px 0;
+	margin: 30px 0;
 }
 
 .timeline-container li:first-child {
@@ -335,17 +339,17 @@ ul {
     font-weight: 500;
 }
 .about .container .left h1{
-    font-size: 7.5em;
+    font-size: 5.5vw;
     text-transform: uppercase;
     color: #8B86D5;
 }
 .about .container .left h2{
-	font-size: 3.3em;
+	font-size: 3.3vw;
 	color: white;
 }
 
 .about .container .left h3{
-	font-size: 2.3em;
+	font-size: 2.3vw;
 	color: white;
 }
 .about .container .left p{
@@ -362,11 +366,12 @@ ul {
 
 .skills{
 	background: var(--darkbg);
-	height: 100vh;
+
 	width: 100%;
 	scroll-snap-align: start;
 	display: flex;
-    align-items: center;
+	/* align-items: flex-end; */
+    padding-bottom: 20px;
 	
 }
 
@@ -430,14 +435,23 @@ ul {
   }
 
   .skills .exp{
-	color: white;
+	/* color: white;
     text-transform: uppercase;
     transform: rotate(270deg);
     position: absolute;
     left: 0%;
     margin-top: 45%;
-    font-size: 6em;
-	transform-origin: 0 0;
+    font-size: 6vw;
+	transform-origin: 0 0; */
+
+	color: white;
+    text-transform: uppercase;
+    transform: rotate(270deg);
+    /* width: 20%; */
+    left: 0%;
+    /* margin-top: 45%; */
+    font-size: 6vw;
+
 }
 
   /* 4th page */
@@ -445,7 +459,7 @@ ul {
   
 .work{
 	background:linear-gradient(45deg, #e58293, #ffc9d3);
-	height: 100vh;
+
 	width: 100%;
 	scroll-snap-align: start;
 }
@@ -454,31 +468,24 @@ ul {
     text-transform: uppercase;
     color: #ffd1d9;
 	position: absolute;
+	top: 25px;
 }
 
 
 
 /* 4th page */
-.work-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-	width: 75%;
-	height: 90vh;
-    align-items: center;
-	margin-top: 110px;
 
-}
 .work-cards .card {
 	color: white;
 	display: grid;
 	place-items: center;
 	position: relative;
-	height: 220px;
-    width: 320px;
+	height: 180px;
+    width: 250px;
 	background: #fff;
 	border-radius: 8px;
 	overflow: hidden;
+	margin: 15px;
   }
   
   .work-cards .card::before {
@@ -522,7 +529,7 @@ ul {
 
   .contact{
 	background: var(--darkbg);
-	height: 100vh;
+
 	width: 100%;
 	scroll-snap-align: start;
   }
@@ -532,7 +539,7 @@ ul {
 
   
 .contact-form-wrapper {
-  padding: 100px 0;
+  /* padding: 100px 0; */
   display: flex;
     justify-content: center;
 }
@@ -560,6 +567,7 @@ ul {
   background-color: #f0f4f5;
   height: auto;
   padding-left: 16px;
+  padding-top: 10px;
 }
 
 .contact-form .form-control::placeholder {
@@ -627,6 +635,7 @@ ul {
 .contact .right{
 	width: 50%;
 	color: gray;
+	padding: 0px 6%;
 }
 .contact .top{
 	display: flex;
@@ -679,4 +688,32 @@ ul {
 }
 .form-control:focus-visible {
     outline: -webkit-focus-ring-color auto 0px;
+}
+
+/* basic flex for pages */
+.contact{
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+/* nav  */
+nav{
+	position: fixed;
+    top: 0;
+    background: #343434a1;
+    padding: 0px 10px;
+width: 100%;
+    z-index: 999;
+}
+
+header, .about{
+	display: flex;
+	align-items: flex-end;
+}
+.work .container{
+	position: relative;
+}
+.newnav{
+	
 }
