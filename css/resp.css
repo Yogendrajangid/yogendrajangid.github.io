@@ -170,7 +170,7 @@ margin: 10px;
         width: 170px;
     }
     header{
-        min-height: 75vh;
+        min-height: 100vh;
         align-items: flex-end;
     }
     header .container {
