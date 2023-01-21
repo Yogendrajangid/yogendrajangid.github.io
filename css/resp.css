@@ -170,8 +170,11 @@ margin: 10px;
         width: 170px;
     }
     header{
-        min-height: 65vh;
+        min-height: 75vh;
         align-items: flex-end;
+    }
+    header .container {
+        padding-top: 70px;
     }
     .about .container .left p {
         font-size: 1.1rem;
