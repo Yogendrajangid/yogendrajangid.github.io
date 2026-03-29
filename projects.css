@@ -1,0 +1,91 @@
+/* ===== PROJECTS PAGE STYLES START ===== */
+
+/* Projects page header with spacing for back button and title */
+.projects-header {
+    padding: 120px 0 60px;
+    background: var(--bg-primary);
+}
+
+/* Back button: inline link with arrow icon and hover animation */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    transition: var(--transition);
+    padding: 10px 24px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 50px;
+}
+
+/* Back button hover: darken text and shift arrow left */
+.back-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* Slide arrow left on hover for visual feedback */
+.back-btn:hover i {
+    transform: translateX(-3px);
+}
+
+/* Smooth arrow transition */
+.back-btn i {
+    transition: transform 0.3s ease;
+    font-size: 0.85rem;
+}
+
+/* Large page title for projects page */
+.projects-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+/* Subtitle description below the title */
+.projects-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+/* Projects grid section with padding */
+.projects-section {
+    padding: 0 0 100px;
+    background: var(--bg-primary);
+}
+
+/* Add spacing between rows within projects page */
+.projects-section .work-row {
+    margin-bottom: 16px;
+}
+
+/* Row 1 items get standard aspect ratio */
+.projects-section .work-row:not(.work-row-bottom) .work-item {
+    aspect-ratio: 4/3;
+}
+
+/* ===== PROJECTS PAGE RESPONSIVE START ===== */
+@media (max-width: 768px) {
+    .projects-header {
+        padding: 100px 0 40px;
+    }
+
+    .projects-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .projects-section {
+        padding: 0 0 70px;
+    }
+}
+/* ===== PROJECTS PAGE RESPONSIVE END ===== */
+
+/* ===== PROJECTS PAGE STYLES END ===== */

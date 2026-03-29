@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Yogendra Jangid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-dot"></div>
+    </div>
+    <canvas class="cursor-trail" id="cursorTrail"></canvas>
+
+    <!-- Projects Page Header -->
+    <header class="projects-header">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back</span>
+            </a>
+            <h1 class="projects-title" data-animate="fade-up">All Projects</h1>
+            <p class="projects-subtitle" data-animate="fade-up" data-delay="100">A collection of my recent work across UI/UX design, web development, branding, and more.</p>
+        </div>
+    </header>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <!-- Row 1 -->
+            <div class="work-row" data-animate="fade-up">
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=400&fit=crop" alt="Web Accessibility Platform">
+                    <div class="work-overlay"><h4>Web Accessibility</h4><p>Platform Design</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop" alt="Analytics Dashboard">
+                    <div class="work-overlay"><h4>Analytics</h4><p>Dashboard UI</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=500&h=400&fit=crop" alt="UI Components">
+                    <div class="work-overlay"><h4>UI Components</h4><p>Design System</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&h=400&fit=crop" alt="Interior Design">
+                    <div class="work-overlay"><h4>Interior</h4><p>3D Visualization</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=500&h=400&fit=crop" alt="Mobile App">
+                    <div class="work-overlay"><h4>Mobile App</h4><p>UI/UX Design</p></div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="work-row work-row-bottom" data-animate="fade-up" data-delay="100">
+                <div class="work-item work-item-lg">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&h=500&fit=crop" alt="Product Photography">
+                    <div class="work-overlay"><h4>Product</h4><p>Brand Photography</p></div>
+                </div>
+                <div class="work-item work-item-md">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&h=500&fit=crop" alt="HR Platform">
+                    <div class="work-overlay"><h4>HR Platform</h4><p>SaaS Dashboard</p></div>
+                </div>
+                <div class="work-item work-item-sm">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=500&fit=crop" alt="App Onboarding">
+                    <div class="work-overlay"><h4>Onboarding</h4><p>App Design</p></div>
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="work-row" data-animate="fade-up" data-delay="200">
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=400&fit=crop" alt="Corporate Website">
+                    <div class="work-overlay"><h4>Corporate Site</h4><p>Web Development</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=500&h=400&fit=crop" alt="Brand Identity">
+                    <div class="work-overlay"><h4>Brand Identity</h4><p>Visual Design</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&h=400&fit=crop" alt="E-Commerce">
+                    <div class="work-overlay"><h4>E-Commerce</h4><p>Online Store</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=400&fit=crop" alt="Code Development">
+                    <div class="work-overlay"><h4>Development</h4><p>Full-Stack App</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=400&fit=crop" alt="UI Kit">
+                    <div class="work-overlay"><h4>UI Kit</h4><p>Component Library</p></div>
+                </div>
+            </div>
+            <!-- Row 4 -->
+            <div class="work-row work-row-bottom" data-animate="fade-up" data-delay="300">
+                <div class="work-item work-item-lg">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=700&h=500&fit=crop" alt="Landing Page">
+                    <div class="work-overlay"><h4>Landing Page</h4><p>Conversion Design</p></div>
+                </div>
+                <div class="work-item work-item-md">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop" alt="Portfolio">
+                    <div class="work-overlay"><h4>Portfolio</h4><p>Personal Brand</p></div>
+                </div>
+                <div class="work-item work-item-sm">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&h=500&fit=crop" alt="Social Media">
+                    <div class="work-overlay"><h4>Social Media</h4><p>Content Design</p></div>
+                </div>
+            </div>
+            <!-- Row 5 -->
+            <div class="work-row" data-animate="fade-up" data-delay="400">
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4eef1d2fa?w=500&h=400&fit=crop" alt="Mendix App">
+                    <div class="work-overlay"><h4>Mendix App</h4><p>Low-Code Platform</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=500&h=400&fit=crop" alt="Dashboard Design">
+                    <div class="work-overlay"><h4>Dashboard</h4><p>Data Visualization</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&h=400&fit=crop" alt="Wireframes">
+                    <div class="work-overlay"><h4>Wireframes</h4><p>UX Research</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1618788372246-79faff0c3742?w=500&h=400&fit=crop" alt="Motion Design">
+                    <div class="work-overlay"><h4>Motion</h4><p>Animation Design</p></div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=500&h=400&fit=crop" alt="Mobile UI">
+                    <div class="work-overlay"><h4>Mobile UI</h4><p>iOS & Android</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>copyright&copy;Yogendra Jangid</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
