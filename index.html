@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yogendra Jangid | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +22,7 @@
     <!-- Navbar: fixed top navigation bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">YU</a>
+            <a href="#" class="logo">YJ</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -29,11 +30,13 @@
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <!-- Dark Theme Toggle: inline in navbar, before Download CV -->
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                <i class="fa-solid fa-moon" id="themeIcon"></i>
-            </button>
-            <a href="#" class="btn-download">Download CV</a>
+            <!-- Nav right group: dark mode toggle + Download CV grouped together -->
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <a href="YOGENDRA JANGID CV.pdf" class="btn-download" target="_blank">Download CV</a>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -57,7 +60,7 @@
             <div class="hero-image" data-animate="fade-left">
                 <!-- Background circle shape behind the profile photo -->
                 <div class="hero-image-bg"></div>
-                <img src="assets/images/profile.png" alt="Yogendra Jangid">
+                <img src="profile.png" alt="Yogendra Jangid">
             </div>
         </div>
         <div class="scroll-down" data-animate="fade-up" data-delay="600">
@@ -73,7 +76,7 @@
         </div>
         <!-- Social Sidebar Right: vertical email text -->
         <div class="social-sidebar right">
-            <span class="vertical-text">yogendrajangid@gmail.com</span>
+            <span class="vertical-text">yogendrajangid007@gmail.com</span>
         </div>
     </section>
     <!-- End Hero Section -->
@@ -236,12 +239,18 @@
     </section>
     <!-- End Services Section -->
 
-    <!-- My Work Section: project gallery grid matching reference layout -->
+    <!-- My Work Section: project gallery with 4 featured projects -->
     <section class="my-work" id="work">
         <div class="container">
-            <h2 class="section-title" data-animate="fade-up">My Work</h2>
-            <!-- Row 1: 5 columns with varied sizes -->
-            <div class="work-row" data-animate="fade-up">
+            <!-- Header row: title on left, view more button on right -->
+            <div class="work-header" data-animate="fade-up">
+                <h2 class="section-title">My Work</h2>
+                <div class="view-more">
+                    <a href="projects.html" class="btn-view-more">View more <span class="view-more-arrow">&rarr;</span></a>
+                </div>
+            </div>
+            <!-- Single row: 4 featured projects -->
+            <div class="work-row work-row-4" data-animate="fade-up" data-delay="100">
                 <div class="work-item">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=400&fit=crop" alt="Web Accessibility Platform">
                     <div class="work-overlay"><h4>Web Accessibility</h4><p>Platform Design</p></div>
@@ -258,29 +267,6 @@
                     <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&h=400&fit=crop" alt="Interior Design">
                     <div class="work-overlay"><h4>Interior</h4><p>3D Visualization</p></div>
                 </div>
-                <div class="work-item">
-                    <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=500&h=400&fit=crop" alt="Mobile App Design">
-                    <div class="work-overlay"><h4>Mobile App</h4><p>UI/UX Design</p></div>
-                </div>
-            </div>
-            <!-- Row 2: 3 columns with large left item -->
-            <div class="work-row work-row-bottom" data-animate="fade-up" data-delay="200">
-                <div class="work-item work-item-lg">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&h=500&fit=crop" alt="Product Photography">
-                    <div class="work-overlay"><h4>Product</h4><p>Brand Photography</p></div>
-                </div>
-                <div class="work-item work-item-md">
-                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&h=500&fit=crop" alt="HR Platform">
-                    <div class="work-overlay"><h4>HR Platform</h4><p>SaaS Dashboard</p></div>
-                </div>
-                <div class="work-item work-item-sm">
-                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=500&fit=crop" alt="App Onboarding">
-                    <div class="work-overlay"><h4>Onboarding</h4><p>App Design</p></div>
-                </div>
-            </div>
-            <!-- View More Button: bordered rectangle with arrow -->
-            <div class="view-more" data-animate="fade-up" data-delay="300">
-                <a href="projects.html" class="btn-view-more">View more <span class="view-more-arrow">&rarr;</span></a>
             </div>
         </div>
     </section>
@@ -315,11 +301,11 @@
                     </p>
                     <div class="info-item">
                         <h4>Contact</h4>
-                        <p>+91 88056 67635</p>
+                        <p>+91 88706 67635</p>
                     </div>
                     <div class="info-item">
                         <h4>Email</h4>
-                        <p>yogendrajangid2018@gmail.com</p>
+                        <p>yogendrajangid007@gmail.com</p>
                     </div>
                     <div class="info-item">
                         <h4>Location</h4>

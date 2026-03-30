@@ -90,7 +90,15 @@ img {
 
 
 /* ===== DARK THEME TOGGLE BUTTON START ===== */
-/* Inline toggle button inside the navbar, positioned before Download CV */
+/* Nav right group: holds dark mode toggle and Download CV button together */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* Inline toggle button inside the navbar, next to Download CV */
 .theme-toggle {
     width: 36px;
     height: 36px;
@@ -104,6 +112,7 @@ img {
     justify-content: center;
     cursor: pointer;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 /* Hover state: invert colors for visual feedback */
@@ -170,6 +179,7 @@ img {
     align-items: center;
     justify-content: space-between;
     height: 64px;
+    position: relative;
 }
 
 /* Site logo text styling */
@@ -179,10 +189,13 @@ img {
     letter-spacing: -0.5px;
 }
 
-/* Horizontal nav link list */
+/* Horizontal nav link list — absolutely centered in navbar */
 .nav-links {
     display: flex;
     gap: 32px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Individual nav link styling */
@@ -302,10 +315,10 @@ img {
     padding-bottom: 60px;
 }
 
-/* Large hero heading with responsive sizing */
+/* Large hero heading with responsive sizing and light weight */
 .hero-title {
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 800;
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 500;
     line-height: 0.95;
     letter-spacing: -3px;
     margin-bottom: 20px;
@@ -330,18 +343,9 @@ img {
     justify-content: center;
 }
 
-/* Gray circle background shape behind profile photo */
+/* Background shape behind profile photo — hidden */
 .hero-image-bg {
-    position: absolute;
-    width: 340px;
-    height: 340px;
-    border-radius: 50%;
-    background: var(--hero-circle);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    z-index: 0;
-    transition: background 0.4s ease;
+    display: none;
 }
 
 /* Profile photo: grayscale filter, placed above circle */
@@ -796,12 +800,30 @@ img {
     background: var(--bg-primary);
 }
 
+/* Flex row for title and view more button side by side */
+.work-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+/* Remove default margin from section title when inside work-header */
+.work-header .section-title {
+    margin-bottom: 0;
+}
+
 /* Row 1: 5 equal-width columns for project thumbnails */
 .work-row {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
     margin-bottom: 16px;
+}
+
+/* 4-column grid for main page featured projects */
+.work-row-4 {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 /* Row 2: 3 columns with larger left item (35% / 40% / 25%) */
@@ -894,11 +916,10 @@ img {
     transform: translateY(0);
 }
 
-/* View more button container: right-aligned */
+/* View more button container */
 .view-more {
     display: flex;
     justify-content: flex-end;
-    margin-top: 40px;
 }
 
 /* View more button: bordered rounded rectangle matching reference design */
@@ -1051,7 +1072,7 @@ img {
 /* ===== FOOTER START ===== */
 /* Simple centered footer with top border */
 .footer {
-    padding: 30px 0;
+    padding: 10px 0;
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
@@ -1090,6 +1111,11 @@ img {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* 2-column for 4-col grid on tablet */
+    .work-row-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     /* Equal columns for bottom row on tablet */
     .work-row-bottom {
         grid-template-columns: repeat(3, 1fr);
@@ -1118,11 +1144,27 @@ img {
     /* Slide down nav when hamburger is active */
     .nav-links.open {
         transform: translateY(0);
+        left: 0;
     }
 
-    /* Hide download button on mobile */
-    .btn-download {
-        display: none;
+    /* Keep nav-right visible on mobile with smaller sizing */
+    .nav-right {
+        gap: 8px;
+        margin-left: auto;
+        margin-right: 12px;
+    }
+
+    /* Smaller download button on mobile */
+    .nav-right .btn-download {
+        font-size: 0.7rem;
+        padding: 8px 16px;
+    }
+
+    /* Slightly smaller theme toggle on mobile */
+    .nav-right .theme-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
     }
 
     /* Show hamburger menu button */
@@ -1147,9 +1189,16 @@ img {
         width: 280px;
     }
 
-    /* Reduce hero title size */
+    /* Reduce hero title size on mobile */
     .hero-title {
-        font-size: 4rem;
+        font-size: 4.5rem;
+    }
+
+    /* Stack work header vertically on mobile */
+    .work-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
     }
 
     /* Stack about content vertically */
@@ -1225,10 +1274,15 @@ img {
 
 /* Small mobile: 480px */
 @media (max-width: 480px) {
-    /* Even smaller hero title */
+    /* Even smaller hero title on small mobile */
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
         letter-spacing: -1.5px;
+    }
+
+    /* Single column for 4-col grid on small mobile */
+    .work-row-4 {
+        grid-template-columns: 1fr;
     }
 
     /* Slightly smaller subtitle */
@@ -1273,21 +1327,22 @@ img {
     position: fixed;
     top: 0;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     pointer-events: none;
     z-index: 99999;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* Cursor dot: small filled circle that follows the mouse position */
+/* Cursor dot: small filled circle that follows the mouse position.
+   Uses aspect-ratio: 1 to ensure perfect circle at any size */
 .cursor-dot {
     width: 6px;
     height: 6px;
+    aspect-ratio: 1;
     background: var(--cursor-color);
     border-radius: 50%;
     border: 1px solid transparent;
@@ -1295,10 +1350,12 @@ img {
 }
 
 /* Cursor hover state: expands to a proper thin transparent ring
-   with no fill, only a visible outer circle border */
+   with no fill, only a visible outer circle border.
+   aspect-ratio: 1 guarantees equal width and height */
 .custom-cursor.hover .cursor-dot {
     width: 55px;
     height: 55px;
+    aspect-ratio: 1;
     background: transparent;
     border: 1px solid var(--cursor-color);
 }
