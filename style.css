@@ -84,7 +84,7 @@ img {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 /* ===== RESET & BASE END ===== */
@@ -175,9 +175,9 @@ img {
 
 /* Flex layout for navbar content */
 .nav-container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -311,6 +311,7 @@ img {
     width: 100%;
     max-width: 1200px;
     gap: 40px;
+    padding: 0 20px;
 }
 
 /* Hero text block with bottom padding for alignment */
