@@ -1348,11 +1348,11 @@ img {
     }
 
     /* Stack work header vertically on mobile */
-    .work-header {
+    /* .work-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
-    }
+    } */
 
     /* Stack about content vertically */
     .about-content {
@@ -1430,8 +1430,12 @@ img {
 
     /* Even smaller hero title on small mobile */
     .hero-title {
-        font-size: 3.5rem;
-        letter-spacing: -1.5px;
+        font-size: 5.5rem;
+        letter-spacing: 0;
+    }
+
+    .hero {
+        padding: 80px 20px 40px;
     }
 
     /* Single column for 4-col grid on small mobile */
@@ -1446,7 +1450,7 @@ img {
 
     /* Smallest hero image */
     .hero-image {
-        width: 220px;
+        width: 320px;
     }
 
     /* Single column services on small mobile */
