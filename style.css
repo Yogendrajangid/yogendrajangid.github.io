@@ -291,9 +291,9 @@ img {
 
 
 /* ===== HERO SECTION START ===== */
-/* Full viewport hero area with centered content */
+/* Full viewport hero area — position:relative so the image can be absolute */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -303,21 +303,27 @@ img {
     overflow: hidden;
 }
 
-/* Hero flex layout: text on left, image on right */
+/* Hero flex layout: text on left, image fills right half absolutely */
 .hero-content {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    max-width: 1200px;
-    gap: 40px;
-    padding: 0 20px;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 80px 0 40px 8vw;
 }
 
-/* Hero text block with bottom padding for alignment */
+/* Hero text block — sits on the left, capped so it doesn't overlap image */
 .hero-text {
-    flex: 1;
+    flex: 0 0 auto;
+    width: 42%;
+    max-width: 560px;
     padding-bottom: 60px;
+    position: relative;
+    z-index: 3;
 }
 
 /* Large hero heading with responsive sizing and light weight */
@@ -338,13 +344,17 @@ img {
     letter-spacing: 0.2px;
 }
 
-/* Hero image container with flexbox centering */
+/* Hero image: absolutely covers the entire right half, edge to edge */
 .hero-image {
-    flex: 0 0 auto;
-    width: 500px;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 52%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -353,21 +363,23 @@ img {
     display: none;
 }
 
-/* Profile photo: grayscale filter, placed above circle */
+/* Profile photo: full width, anchored to bottom, no cropping on sides */
 .hero-image img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
     filter: grayscale(100%);
-    position: relative;
-    z-index: 1;
+    display: block;
+    align-self: flex-end;
 }
 
-/* Scroll down indicator at bottom center of hero */
+/* Scroll down indicator — centered within the left text half */
 .scroll-down {
     position: absolute;
     bottom: 40px;
-    left: 50%;
+    left: calc(8vw + 21%);
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
@@ -378,6 +390,7 @@ img {
     letter-spacing: 1px;
     color: var(--text-muted);
     animation: bounce 2s infinite;
+    z-index: 4;
 }
 
 /* Bounce animation for scroll indicator arrow */
@@ -399,6 +412,7 @@ img {
         transform: translateX(-50%) translateY(-4px);
     }
 }
+
 
 /* ===== HERO SECTION END ===== */
 
@@ -668,7 +682,12 @@ img {
 /* About section with white/dark background */
 .about {
     padding: 100px 0;
-    background: var(--bg-primary);
+    background: linear-gradient(to bottom, #ebebeb 0%, var(--bg-primary) 180px);
+}
+
+/* Dark mode: subtle dark fade */
+[data-theme="dark"] .about {
+    background: linear-gradient(to bottom, #1a1a1a 0%, var(--bg-primary) 180px);
 }
 
 /* Section title shared across all sections */
@@ -1243,9 +1262,13 @@ img {
 /* Tablet landscape and below: 1024px */
 @media (max-width: 1024px) {
 
-    /* Shrink hero image for smaller screens */
+    /* Narrow the image panel slightly on tablet */
     .hero-image {
-        width: 320px;
+        width: 48%;
+    }
+
+    .hero-text {
+        width: 46%;
     }
 
     /* Hide social sidebars on tablet and below */
@@ -1325,21 +1348,35 @@ img {
         display: flex;
     }
 
-    /* Stack hero content vertically with image on top */
+    /* Stack hero content vertically — image becomes top banner on mobile */
     .hero-content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 65vw 24px 40px;
+        min-height: unset;
     }
 
-    /* Reduce hero text bottom padding */
+    /* Full width text on mobile */
     .hero-text {
+        width: 100%;
+        max-width: 100%;
         padding-bottom: 20px;
     }
 
-    /* Smaller hero image on mobile */
+    /* Image covers top portion on mobile */
     .hero-image {
-        width: 280px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 55vw;
+        min-height: 260px;
+    }
+
+    /* Re-center scroll down on mobile since layout is stacked */
+    .scroll-down {
+        left: 50%;
     }
 
     /* Reduce hero title size on mobile */
@@ -1448,9 +1485,13 @@ img {
         font-size: 0.85rem;
     }
 
-    /* Smallest hero image */
+    /* Smallest hero image — top banner */
     .hero-image {
-        width: 320px;
+        height: 60vw;
+    }
+
+    .hero-content {
+        padding-top: 85vw;
     }
 
     /* Single column services on small mobile */
